@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "d44338a4-b1a2-4c69-9e6a-d05c35a22513",
+		"name": "B2A ECOMMERCE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Risk Balances",
+			"item": [
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{web_protocol}}://{{web_domain}}/wp-json/api/v1/risk-balances/update/?jsonData={\"ws_code\":\"ai1\",\"ws_secret_key\":\"dfklsghsdg76876gd6gfg\",\"data\":[{\"customer_cif\":\"A01010101\",\"risk_balance\":9621.43},{\"customer_cif\":\"B02020202\",\"risk_balance\":6805.2},{\"customer_cif\":\"C03030303\",\"risk_balance\":5000}]}",
+							"protocol": "{{web_protocol}}",
+							"host": [
+								"{{web_domain}}"
+							],
+							"path": [
+								"wp-json",
+								"api",
+								"v1",
+								"risk-balances",
+								"update",
+								""
+							],
+							"query": [
+								{
+									"key": "jsonData",
+									"value": "your_json_data_here",
+									"disabled": true
+								},
+								{
+									"key": "jsonData",
+									"value": "{\"ws_code\":\"ai27\",\"ws_secret_key\":\"74jHJHs7ubf6csASd6\",\"data\":[{\"customer_cif\":\"A01010101\",\"risk_balance\":9621.43},{\"customer_cif\":\"B02020202\",\"risk_balance\":6805.2},{\"customer_cif\":\"C03030303\",\"risk_balance\":5000}]}",
+									"description": "This is an example"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "web_protocol",
+			"value": "http"
+		},
+		{
+			"key": "web_domain",
+			"value": "pim.ce-ese.com"
+		}
+	]
+}

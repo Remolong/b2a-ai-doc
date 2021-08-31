@@ -1,0 +1,21 @@
+# temporary editor files
+.idea
+.project
+.directory
+nbproject
+*.swp
+.\#*
+*.sublime-project
+*.sublime-workspace
+*.iml
+
+
+# operating system cache files
+.DS_Store
+Desktop.ini
+Thumbs.db
+
+# third party libraries
+vendor/
+libs/
+composer.lock
