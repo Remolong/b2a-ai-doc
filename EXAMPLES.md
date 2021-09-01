@@ -73,7 +73,7 @@ files=[
 
 ]
 headers = {
-  'Cookie': 'PHPSESSID=trtdom7p70v14d51iidtumn604'
+  
 }
 
 response = requests.request("POST", url, headers=headers, data=payload, files=files)
