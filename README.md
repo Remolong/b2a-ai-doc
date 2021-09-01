@@ -1,19 +1,19 @@
-<h1 id="title">
-Sistema B2A Eisen
-Documentación técnica
-</h1>
+# Sistema B2A Eisen
+## Documentación técnica
+
 La plataforma dispone de mecanismos mediante los cuales interactuar con el sistema en determinados procesos.
 
 Estos mecanismos permiten a los desarrolladores y técnicos del **Asociado Industrial (AI)** establecer procesos automatizados para la comunicación de determinados datos entre la plataforma **B2A** y los sistemas propios del AI, así como entre los sistemas del AI y B2A.
 
 Las opciones de interacción disponibles son:
+
 * [Comunicación de pedidos](#-comunicaci%C3%B3n-de-pedidos-)
 * [Comunicación de saldos de riesgo de los clientes](#-comunicación-de-saldos-de-riesgo-de-los-clientes-)
 * [Comunicación de saldos de riesgo mediante SFTP](#-comunicación-de-saldos-de-riesgo-mediante-sftp)
 
 ***
 
-<h2 id="orderscomm"> Comunicación de pedidos </h2>
+## Comunicación de pedidos
 
 **B2A** guarda cada uno de los pedidos que el **AI** o sus **clientes** realizan mediante la plataforma.
 Cada uno de estos pedidos se almacena en un archivo, y el formato del mismo será el definido por el AI en el momento de la implantación. 
@@ -29,7 +29,7 @@ B2A generará el archivo en el momento en que el usuario confirma el pedido, y t
 En el contenido del archivo se puede ver el estado, junto al resto de datos del pedido.
 ***
 
-<h2> Comunicación de saldos de riesgo de los clientes </h2>
+## Comunicación de saldos de riesgo de los clientes
 
 Esta comunicación permite al AI informar a B2A el saldo de riesgo disponible en cada momento para cada uno de sus clientes, 
 de manera que este pueda controlar en el momento en que el cliente intenta realizar un pedido, si dispone de riesgo suficiente, 
@@ -105,7 +105,7 @@ se pueden obtener en el apartado Administración/Ajustes del sistema de la tiend
             }        
 ```
 
-<h4 id="riskwebserviceresponse"> Respuestas</h4>
+### Respuestas
 
 - Ok
 
@@ -125,7 +125,7 @@ se pueden obtener en el apartado Administración/Ajustes del sistema de la tiend
 }
 ```
 
-<h3 id="risksftp"> Comunicación de saldos de riesgo mediante SFTP</h3>
+### Comunicación de saldos de riesgo mediante SFTP
 
 Este sistema de actualización del saldo de riesgo de los clientes no es inmediato, 
 ya que B2A lo gestiona mediante barridos por lotes, por ello la actualización puede demorarse hasta 5 minutos.
@@ -136,7 +136,7 @@ El sistema consiste en depositar archivos en la carpeta "**riesgos**" del [espac
 estos archivos serán procesados por B2A, y eliminados para no volver a procesarlos. 
 El archivo a depositar en la carpeta "**riesgos**" debe contener la información en formato **JSON**. Una vez depositado el archivo en el SFTP, B2A lo gestionará en el siguiente barrido y eliminará el archivo.
 
-<h4 id="jsonstructure"> Estructura del JSON</h4>
+#### Estructura del JSON
 
 Lo siguiente es un ejemplo donde se puede ver la estructura que debe tener el JSON contenido en el archivo.
 ```
@@ -161,7 +161,7 @@ Lo siguiente es un ejemplo donde se puede ver la estructura que debe tener el JS
     }        
 ```
 
-<h2 id="sftp">Espacio SFTP del AI</h2>
+### Espacio SFTP del AI
 
 Los AI's tienen acceso a un espacio en el servidor SFTP, dentro del cual existen carpetas para cada tipo de comunicación.
 
