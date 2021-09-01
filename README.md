@@ -70,7 +70,7 @@ Para ello puedes consultar nuestra [documentación](POSTMAN.md).
 
 | METODO | Endpoint | Parametros |  Descripcion |
 | ------ | -------- | ---------- | --- |
-| **POST** | /update |  `ws_code`, `ws_secret_ket`, `users` |  Este endpoint permite la actualizacion de los saldos de riesgo de los clientes. |
+| **POST** | /update |  `ws_code`, `ws_secret_key`, `users` |  Este endpoint permite la actualizacion de los saldos de riesgo de los clientes. |
 
 Los datos necesarios para lanzar el servicio web que son específicos del AI, 
 se pueden obtener en el apartado Administración/Ajustes del sistema de la tienda, accediendo con un usuario del AI. 
@@ -169,7 +169,7 @@ Lo siguiente es un ejemplo donde se puede ver la estructura que debe tener el JS
 
 #### Espacio SFTP del AI
 
-Los AI's tienen acceso a un espacio en el servidor SFTP, dentro del cual existen carpetas para cada tipo de comunicación.
+Los AI tienen acceso a un espacio en el servidor SFTP, dentro del cual existen carpetas para cada tipo de comunicación.
 
 Se debe utilizar el protocolo SFTP, y se pueden obtener los datos de acceso accediendo a **Administración/Ajustes del sistema** en la tienda del AI, con un usuario del propio AI, 
  en el apartado Credenciales SFTP.
