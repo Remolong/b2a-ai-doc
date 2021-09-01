@@ -9,6 +9,7 @@ Estos mecanismos permiten a los desarrolladores y técnicos del **Asociado Indus
 Las opciones de interacción disponibles son:
 * [Comunicación de pedidos](#orderscomm)
 * [Comunicación de saldos de riesgo de los clientes](#riskcomm)
+
 ***
 
 <h2 id="orderscomm"> Comunicación de pedidos </h2>
@@ -28,6 +29,7 @@ En el contenido del archivo se puede ver el estado, junto al resto de datos del 
 ***
 
 <h2 id="riskcomm"> Comunicación de saldos de riesgo de los clientes </h2>
+
 Esta comunicación permite al AI informar a B2A el saldo de riesgo disponible en cada momento para cada uno de sus clientes, 
 de manera que este pueda controlar en el momento en que el cliente intenta realizar un pedido, si dispone de riesgo suficiente, 
 y en caso contrario avisarle con el mensaje correspondiente.
@@ -37,6 +39,7 @@ Esta comunicación se puede realizar de dos maneras diferentes:
 * Vía SFTP
 
 <h3 id="riskwebservice"> Servicio Web de comunicación de saldos de riesgo</h3>
+
 Mediante este sistema la actualización del saldo de riesgo de los clientes es inmediata. Se puede lanzar el servicio web para actualizar el saldo de un solo cliente 
 o de un grupo (puede ser de todos).
 
@@ -122,6 +125,7 @@ se pueden obtener en el apartado Administración/Ajustes del sistema de la tiend
 ```
 
 <h3 id="risksftp"> Comunicación de saldos de riesgo mediante SFTP</h3>
+
 Este sistema de actualización del saldo de riesgo de los clientes no es inmediato, 
 ya que B2A lo gestiona mediante barridos por lotes, por ello la actualización puede demorarse hasta 5 minutos.
 
@@ -132,6 +136,7 @@ estos archivos serán procesados por B2A, y eliminados para no volver a procesar
 El archivo a depositar en la carpeta "**riesgos**" debe contener la información en formato **JSON**. Una vez depositado el archivo en el SFTP, B2A lo gestionará en el siguiente barrido y eliminará el archivo.
 
 <h4 id="jsonstructure"> Estructura del JSON</h4>
+
 Lo siguiente es un ejemplo donde se puede ver la estructura que debe tener el JSON contenido en el archivo.
 ```
     {
