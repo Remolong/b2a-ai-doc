@@ -9,6 +9,7 @@ Estos mecanismos permiten a los desarrolladores y técnicos del **Asociado Indus
 Las opciones de interacción disponibles son:
 * [Comunicación de pedidos](#-comunicaci%C3%B3n-de-pedidos-)
 * [Comunicación de saldos de riesgo de los clientes](#-comunicación-de-saldos-de-riesgo-de-los-clientes-)
+* [Comunicación de saldos de riesgo mediante SFTP](#-comunicación-de-saldos-de-riesgo-mediante-sftp)
 
 ***
 
