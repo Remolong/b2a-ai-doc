@@ -7,12 +7,12 @@ Estos mecanismos permiten a los desarrolladores y técnicos del **Asociado Indus
 
 Las opciones de interacción disponibles son:
 
-* [Comunicación de pedidos](#-comunicaci%C3%B3n-de-pedidos-)
-* [Comunicación de saldos de riesgo de los clientes](#-comunicación-de-saldos-de-riesgo-de-los-clientes-)
-* [Comunicación de saldos de riesgo mediante SFTP](#-comunicación-de-saldos-de-riesgo-mediante-sftp)
+* [Comunicación de pedidos](#comunicación-de-saldos-de-riesgo-de-los-clientes)
+* [Comunicación de saldos de riesgo de los clientes](#comunicación-de-saldos-de-riesgo-de-los-clientes)
+  * [Comunicación de saldos de riesgo mediante Servicio web](#servicio-web-para-la-comunicación-de-saldos-de-riesgo)  
+  * [Comunicación de saldos de riesgo mediante SFTP](#servicio-sftp-para-la-comunicación-de-saldos-de-riesgo)
 
 ***
-
 ## Comunicación de pedidos
 
 **B2A** guarda cada uno de los pedidos que el **AI** o sus **clientes** realizan mediante la plataforma.
@@ -22,7 +22,7 @@ Cada uno de estos pedidos se almacena en un archivo, y el formato del mismo ser�
     * XML
     * CSV
 
-Los archivos se almacenan en la carpeta "**pedidos**" del [espacio SFTP](#sftp) puesto a disposición del AI. En esta carpeta 
+Los archivos se almacenan en la carpeta "**pedidos**" del [espacio SFTP](#espacio-sftp-del-ai) puesto a disposición del AI. En esta carpeta 
 La operativa habitual podría ser descargar cada archivo y eliminarlo una vez tratado, de ese modo en esta carpeta siempre estarán los archivos correspondientes a pedidos pendientes de gestionar por parte del AI. 
 
 B2A generará el archivo en el momento en que el usuario confirma el pedido, y también cuando el mismo va cambiando de estado. 
@@ -36,18 +36,21 @@ de manera que este pueda controlar en el momento en que el cliente intenta reali
 y en caso contrario avisarle con el mensaje correspondiente.
 
 Esta comunicación se puede realizar de dos maneras diferentes:
-* Vía servicio web
-* Vía SFTP
+* Vía [servicio web](#servicio-web-para-la-comunicación-de-saldos-de-riesgo)
+* Vía [SFTP](#servicio-sftp-para-la-comunicación-de-saldos-de-riesgo)
 
-<h3> Servicio Web de comunicación de saldos de riesgo</h3>
+***
+### Servicio Web para la comunicación de saldos de riesgo
+***
 
 Mediante este sistema la actualización del saldo de riesgo de los clientes es inmediata. Se puede lanzar el servicio web para actualizar el saldo de un solo cliente 
 o de un grupo (puede ser de todos).
 
 Se pueden probar los servicios web con [Postman](https://www.postman.com/).
+
 Para ello puedes consultar nuestra [documentación](POSTMAN.md).
 
-<h4> Descripción de los parámetros </h4>
+### Descripción de los parámetros
 
 | Parametro | Tipo |  Descripcion |
 | ---------- | --- | --- |
@@ -57,7 +60,7 @@ Para ello puedes consultar nuestra [documentación](POSTMAN.md).
 | customer_cif | String | La identificación del usuario / cliente. |
 | risk_balance | Float | El saldo de riesgo del cliente. |
 
-<h4> Descripcion del Servicio </h4>
+### Descripcion del Servicio
 
 - URL del servicio web
 
@@ -70,12 +73,14 @@ Para ello puedes consultar nuestra [documentación](POSTMAN.md).
 | **POST** | /update |  `ws_code`, `ws_secret_ket`, `users` |  Este endpoint permite la actualizacion de los saldos de riesgo de los clientes. |
 
 Los datos necesarios para lanzar el servicio web que son específicos del AI, 
-se pueden obtener en el apartado Administración/Ajustes del sistema de la tienda, accediendo con un usuario del AI. Estos datos son:
+se pueden obtener en el apartado Administración/Ajustes del sistema de la tienda, accediendo con un usuario del AI. 
+
+Estos datos son:
 * ws_code: Código WS
 * ws_secret_key: Clave secreta WS
 * URL: URL del endpoint
 
-<h4 id="riskwebservicesample"> Este es un ejemplo de actualización de saldos de riesgo de los clientes.</h4>
+#### Este es un ejemplo de actualización de saldos de riesgo de los clientes.
 
 - URL:        ` your-domain.tdl/wp-json/api/v1/risk-balances/update `
 
@@ -125,14 +130,15 @@ se pueden obtener en el apartado Administración/Ajustes del sistema de la tiend
 }
 ```
 
-### Comunicación de saldos de riesgo mediante SFTP
-
+***
+### Servicio SFTP para la comunicación de saldos de riesgo
+***
 Este sistema de actualización del saldo de riesgo de los clientes no es inmediato, 
 ya que B2A lo gestiona mediante barridos por lotes, por ello la actualización puede demorarse hasta 5 minutos.
 
 Al igual que en el servicio web, se puede actualizar el saldo de un solo cliente o de un grupo (puede ser de todos).
 
-El sistema consiste en depositar archivos en la carpeta "**riesgos**" del [espacio SFTP](#sftp) del AI, 
+El sistema consiste en depositar archivos en la carpeta "**riesgos**" del [espacio SFTP](#espacio-sftp-del-ai) del AI, 
 estos archivos serán procesados por B2A, y eliminados para no volver a procesarlos. 
 El archivo a depositar en la carpeta "**riesgos**" debe contener la información en formato **JSON**. Una vez depositado el archivo en el SFTP, B2A lo gestionará en el siguiente barrido y eliminará el archivo.
 
@@ -161,12 +167,12 @@ Lo siguiente es un ejemplo donde se puede ver la estructura que debe tener el JS
     }        
 ```
 
-### Espacio SFTP del AI
+#### Espacio SFTP del AI
 
 Los AI's tienen acceso a un espacio en el servidor SFTP, dentro del cual existen carpetas para cada tipo de comunicación.
 
 Se debe utilizar el protocolo SFTP, y se pueden obtener los datos de acceso accediendo a **Administración/Ajustes del sistema** en la tienda del AI, con un usuario del propio AI, 
- en el aprtado Credenciales SFTP.
+ en el apartado Credenciales SFTP.
 * Host
 * Puerto
 * Nombre de usuario
