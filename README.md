@@ -161,6 +161,7 @@ Lo siguiente es un ejemplo donde se puede ver la estructura que debe tener el JS
 ```
 
 <h2 id="sftp">Espacio SFTP del AI</h2>
+
 Los AI's tienen acceso a un espacio en el servidor SFTP, dentro del cual existen carpetas para cada tipo de comunicación.
 
 Se debe utilizar el protocolo SFTP, y se pueden obtener los datos de acceso accediendo a **Administración/Ajustes del sistema** en la tienda del AI, con un usuario del propio AI, 
