@@ -7,8 +7,8 @@ La plataforma dispone de mecanismos mediante los cuales interactuar con el siste
 Estos mecanismos permiten a los desarrolladores y técnicos del **Asociado Industrial (AI)** establecer procesos automatizados para la comunicación de determinados datos entre la plataforma **B2A** y los sistemas propios del AI, así como entre los sistemas del AI y B2A.
 
 Las opciones de interacción disponibles son:
-* [Comunicación de pedidos](#orderscomm)
-* [Comunicación de saldos de riesgo de los clientes](#riskcomm)
+* [Comunicación de pedidos](#-comunicaci%C3%B3n-de-pedidos-)
+* [Comunicación de saldos de riesgo de los clientes](#-comunicación-de-saldos-de-riesgo-de-los-clientes-)
 
 ***
 
@@ -28,7 +28,7 @@ B2A generará el archivo en el momento en que el usuario confirma el pedido, y t
 En el contenido del archivo se puede ver el estado, junto al resto de datos del pedido.
 ***
 
-<h2 id="riskcomm"> Comunicación de saldos de riesgo de los clientes </h2>
+<h2> Comunicación de saldos de riesgo de los clientes </h2>
 
 Esta comunicación permite al AI informar a B2A el saldo de riesgo disponible en cada momento para cada uno de sus clientes, 
 de manera que este pueda controlar en el momento en que el cliente intenta realizar un pedido, si dispone de riesgo suficiente, 
@@ -38,7 +38,7 @@ Esta comunicación se puede realizar de dos maneras diferentes:
 * Vía servicio web
 * Vía SFTP
 
-<h3 id="riskwebservice"> Servicio Web de comunicación de saldos de riesgo</h3>
+<h3> Servicio Web de comunicación de saldos de riesgo</h3>
 
 Mediante este sistema la actualización del saldo de riesgo de los clientes es inmediata. Se puede lanzar el servicio web para actualizar el saldo de un solo cliente 
 o de un grupo (puede ser de todos).
@@ -46,7 +46,7 @@ o de un grupo (puede ser de todos).
 Se pueden probar los servicios web con [Postman](https://www.postman.com/).
 Para ello puedes consultar nuestra [documentación](POSTMAN.md).
 
-<h4 id="riskwebserviceparams"> Descripción de los parámetros </h4>
+<h4> Descripción de los parámetros </h4>
 
 | Parametro | Tipo |  Descripcion |
 | ---------- | --- | --- |
@@ -56,7 +56,7 @@ Para ello puedes consultar nuestra [documentación](POSTMAN.md).
 | customer_cif | String | La identificación del usuario / cliente. |
 | risk_balance | Float | El saldo de riesgo del cliente. |
 
-<h4 id="riskwebservicedescr"> Descripcion del Servicio </h4>>
+<h4> Descripcion del Servicio </h4>
 
 - URL del servicio web
 
