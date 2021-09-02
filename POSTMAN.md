@@ -1,12 +1,12 @@
-# Web Service Risk Balances
+# Servicio Web de actualización de riesgos de clientes
 
 ## Postman
 
-Pruebe los servicios web con postman.
+Puedes utilizar Postman para realizar pruebas de utilización de este servicio web.
 
-### Requirements
+### Requisitos
 
-- Install [Postman](https://www.postman.com/).
+- Instalar [Postman](https://www.postman.com/).
 
 - Descargar el [archivo de configuracion](postman/b2a_ecommerce.json).
 
