@@ -46,9 +46,9 @@ Esta comunicación se puede realizar de dos maneras diferentes:
 Mediante este sistema la actualización del saldo de riesgo de los clientes es inmediata. Se puede lanzar el servicio web para actualizar el saldo de un solo cliente 
 o de un grupo (puede ser de todos).
 
-Se pueden probar los servicios web con [Postman](https://www.postman.com/).
+Se pueden probar los servicios web con [Postman](https://www.postman.com/), para ello puedes consultar nuestra [documentación](POSTMAN.md).
 
-Para ello puedes consultar nuestra [documentación](POSTMAN.md).
+También puedes ver [algunos ejemplos](EXAMPLES.md) de utilización del servicio con algunos lenguajes de programación.
 
 ### Descripción de los parámetros
 

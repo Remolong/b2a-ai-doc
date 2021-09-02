@@ -1,4 +1,4 @@
-# Web Service Risk Balances
+# Servicio Web de actualización de riesgos de clientes
 
 ## Ejemplos para el uso del servicio web
 
